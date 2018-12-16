@@ -1,9 +1,13 @@
 //Writing to the remote file://
 var WebHDFS = require('webhdfs');
+var fs = require('file-system');
 var hdfs = WebHDFS.createClient();
 
 var localFileStream = fs.createReadStream('./data/Sample_Data');
+console.log("Local File Stream: " + localFileStream);
+
 var remoteFileStream = hdfs.createWriteStream('/home/vagrant/sample-data-2016');
+console.log("Writing to Remote File Stream: " + remoteFileStream);
 
 localFileStream.pipe(remoteFileStream);
 
@@ -29,6 +33,8 @@ var hdfs = WebHDFS.createClient({
 });
 
 var remoteFileStream = hdfs.createReadStream('/path/to/remote/file');
+console.log("Reading from Remote File Stream: " + remoteFileStream);
+
 
 remoteFileStream.on('error', function onError (err) {
   // Do something with the error
