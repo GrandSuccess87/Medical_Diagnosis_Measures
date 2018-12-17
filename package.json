@@ -19,6 +19,7 @@
   "homepage": "https://github.com/GrandSuccess87/MedicalMeasuresApp#readme",
   "dependencies": {
     "express": "^4.16.4",
+    "fast-csv": "^2.4.1",
     "file-system": "^2.2.2",
     "node-webhdfs": "^0.4.0",
     "webhdfs": "^1.2.0"
