@@ -24,12 +24,20 @@ var csv = require('fast-csv');
 //   console.log('Sample Data Uploaded Successfully, Read Finished');
 // });
 
- var localFileStream = fs.createReadStream('./data/Sample_Data.csv');
+ let localFileStream = fs.createReadStream('./data/Sample_Data.csv');
  // console.log("Hit Local File Stream");
   localFileStream.pipe(csv())
   .on('data', function(data){
     // if(info) console.log("Error: " + info);
-    console.log(`Data: ${data}`);
+    let person = `Person ${data}`;
+    console.log(person);
+    // connection.query(query, function(){
+      for(let i = 0; i < data.length; i++) {
+        let query = "INSERT INTO DiseaseMeasures";
+        // console.log(query);
+        // console.log(data[i]);
+      }
+    // })
   })
   .on('end', function(data){
     // if(err) console.log("Error: " + err);
