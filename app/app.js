@@ -23,35 +23,33 @@ var csv = require('fast-csv');
 //   // Upload is done
 //   console.log('Sample Data Uploaded Successfully, Read Finished');
 // });
-function readColleges() {
-  connection.query("SELECT name FROM colleges", function(err, res) {
-    if (err) throw err;
-
-    // Log all results of the SELECT statement
-    console.log(res);
-    res.forEach(row => {
-      console.log(`College Name: ${row.name}`);
-    })
 
 
- let localFileStream = fs.createReadStream('./data/Sample_Data.csv');
+
+ let localFileStream = fs.createReadStream('./data/Sample_Data_2016.csv');
  // console.log("Hit Local File Stream");
   localFileStream.pipe(csv())
-  .on('data', function(err, data){
-    if(err) console.log("Error: " + err);
+  .on('data', function(data){
+
+    // if(err) console.log(`Error: ${err}`);
+
     let person = `Person: ${data}`;
     console.log(person);
 
-    let query =
-    INSERT INTO DiseaseMeasures (encounter_id, patient_nbr, race, gender, age, LengthofStay, ED_visits, Inpatient_visits, diagnosis_code, HistoryofPTCA, HistoryofCABG, Congestiveheartfailure, Acutecoronarysyndrome, Anteriormyocardialinfarction, Otherlocationofmyocardialinfarction, Anginapectorisoldmyocardialinfarction, Coronaryatherosclerosis, Valvularorrheumaticheartdisease, Specifiedarrhythmias, Historyofinfection, Metastaticcanceroracuteleukemia, Cancer, Diabetesmellitus(DM)orDMcomplications, Protein-caloriemalnutritionDisordersoffluidelectrolyteacid-baseIrondeficiencyorotheranemiasandblooddisease, Dementiaorotherspecifiedbraindisorders, Hemiplegiaparaplegiaparalysisfunctionaldisability, Stroke, Cerebrovasculardisease, Vascularorcirculatorydisease, Chronicobstructivepulmonarydisease, Asthma, Pneumonia, End-stagerenaldiseaseordialysis, Renalfailure, Otherurinarytractdisorders, Decubitusulcerorchronicskinulcer,
-    LungUpperDigestiveTractandOtherSevereCancers, LymphaticHeadandNeckBrainandOtherMajorCancers,BreastColorectalandotherCancersandTumors,OtherRespiratoryandHeartNeoplasms, OtherDigestiveandUrinaryNeoplasms, OtherEndocrine/Metabolic/NutritionalDisorders, PancreaticDisease, PepticUlcerHemorrhageOtherSpecifiedGastrointestinalDisorders, OtherGastrointestinalDisorders, SevereHematologicalDisorders, Drug/AlcoholInducedDependence/Psychosis, MajorPsychiatricDisorders,
-    Depression, AnxietyDisorders, OtherPsychiatricDisorders, QuadriplegiaParaplegiaParalysisFunctionalDisability, Polyneuropathy, HypertensiveHeartandRenalDiseaseorEncephalopathy, CellulitisLocalSkinInfection, VertebralFractures, Liverandbiliarydisease, Fibrosisoflungandotherchroniclungdisorders, Nephritis, End-stageliverdisease, Seizuredisordersandconvulsions, Chronicheartfailure, Coronaryatherosclerosisoranginacerebrovasculardisease, Dialysisstatus, Septicemia/shock,
-    Cardio-respiratoryfailureorcardio-respiratoryshock, Rheumatoidarthritisandinflammatoryconnectivetissuedisease, Respiratordependence/tracheostomystatus, Transplants, Coagulationdefectsandotherspecifiedhematologicaldisorders, Hipfracture/dislocation, Pleuraleffusion/pneumothorax, Urinarytractinfection, Otherinjuries, Skeletaldeformities, Posttraumaticosteoarthritis, Morbidobesity, Hypertension, Majorsymptomsabnormalities, HistoryofMechanicalVentilation, SleepApnea,
-    OtherandUnspecifiedHeartDisease) VALUES();
-    console.log(query);
+    // person.forEach(row => {
+    //   console.log(`Person Data: ${row.encounter_id}`);
+    // })
 
+    // let query =
+    // INSERT INTO DiseaseMeasures (encounter_id, patient_nbr, race, gender, age, LengthofStay, ED_visits, Inpatient_visits, diagnosis_code, HistoryofPTCA, HistoryofCABG, Congestiveheartfailure, Acutecoronarysyndrome, Anteriormyocardialinfarction, Otherlocationofmyocardialinfarction, Anginapectorisoldmyocardialinfarction, Coronaryatherosclerosis, Valvularorrheumaticheartdisease, Specifiedarrhythmias, Historyofinfection, Metastaticcanceroracuteleukemia, Cancer, Diabetesmellitus(DM)orDMcomplications, Protein-caloriemalnutritionDisordersoffluidelectrolyteacid-baseIrondeficiencyorotheranemiasandblooddisease, Dementiaorotherspecifiedbraindisorders, Hemiplegiaparaplegiaparalysisfunctionaldisability, Stroke, Cerebrovasculardisease, Vascularorcirculatorydisease, Chronicobstructivepulmonarydisease, Asthma, Pneumonia, End-stagerenaldiseaseordialysis, Renalfailure, Otherurinarytractdisorders, Decubitusulcerorchronicskinulcer,
+    // LungUpperDigestiveTractandOtherSevereCancers, LymphaticHeadandNeckBrainandOtherMajorCancers,BreastColorectalandotherCancersandTumors,OtherRespiratoryandHeartNeoplasms, OtherDigestiveandUrinaryNeoplasms, OtherEndocrine/Metabolic/NutritionalDisorders, PancreaticDisease, PepticUlcerHemorrhageOtherSpecifiedGastrointestinalDisorders, OtherGastrointestinalDisorders, SevereHematologicalDisorders, Drug/AlcoholInducedDependence/Psychosis, MajorPsychiatricDisorders,
+    // Depression, AnxietyDisorders, OtherPsychiatricDisorders, QuadriplegiaParaplegiaParalysisFunctionalDisability, Polyneuropathy, HypertensiveHeartandRenalDiseaseorEncephalopathy, CellulitisLocalSkinInfection, VertebralFractures, Liverandbiliarydisease, Fibrosisoflungandotherchroniclungdisorders, Nephritis, End-stageliverdisease, Seizuredisordersandconvulsions, Chronicheartfailure, Coronaryatherosclerosisoranginacerebrovasculardisease, Dialysisstatus, Septicemia/shock,
+    // Cardio-respiratoryfailureorcardio-respiratoryshock, Rheumatoidarthritisandinflammatoryconnectivetissuedisease, Respiratordependence/tracheostomystatus, Transplants, Coagulationdefectsandotherspecifiedhematologicaldisorders, Hipfracture/dislocation, Pleuraleffusion/pneumothorax, Urinarytractinfection, Otherinjuries, Skeletaldeformities, Posttraumaticosteoarthritis, Morbidobesity, Hypertension, Majorsymptomsabnormalities, HistoryofMechanicalVentilation, SleepApnea,
+    // OtherandUnspecifiedHeartDisease) VALUES();
+    // console.log(query);
+      //
       for(let i = 0; i < data.length; i++) {
-        console.log(data);
+        // console.log(data);
       }
   })
   .on('end', function(data){
