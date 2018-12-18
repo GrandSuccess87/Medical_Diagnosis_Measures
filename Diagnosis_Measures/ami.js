@@ -1,8 +1,16 @@
-// Core node package for reading and writing files
 const fs = require("fs");
-const patientData = require("../data/SampleData2016.csv");
-// console.log(patientData);
 const ami = process.argv[2];
+const csvFilePath=('./data/SampleData2016.csv');
+const csv=require('csvtojson');
+
+csv()
+.fromFile(csvFilePath)
+.then((jsonObj)=>{
+    console.log(jsonObj);
+})
+
+// Async / await usage
+const jsonArray = csv().fromFile(csvFilePath);
 
 // const diagnosis_codeArry = [];
 // const diagnosis_code;
@@ -14,7 +22,7 @@ const ami = process.argv[2];
 // }
 
 
-fs.writeFile("ami.txt", "Testing AMI Measure", function(err) {
+fs.writeFile("ami.txt", jsonArray, function(err) {
 
  if (err) {
    return console.log(err);
