@@ -12,14 +12,9 @@ csv()
 // Async / await usage
 const jsonArray = csv().fromFile(csvFilePath);
 
+
 // const diagnosis_codeArry = [];
 // const diagnosis_code;
-
-// for(var i = 0; i < patientData.length; i++) {
-//   if(diagnosis_code) {
-//     console.log(diagnosis_code);
-//   }
-// }
 
 
 fs.writeFile("ami.txt", jsonArray, function(err) {
@@ -32,7 +27,7 @@ fs.writeFile("ami.txt", jsonArray, function(err) {
 
 });
 
-// Import SampleData2016 csv file
+
 // create an array to hold the AMI diagnosis codes
 // create a variable for a code
 // Loop through the data inside the file and create an if/else statement that checks the two variables and print results to the console
