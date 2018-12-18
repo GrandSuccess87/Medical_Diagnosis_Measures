@@ -12,6 +12,10 @@ localFileStream.pipe(csv())
     let person = `Patient: ${data}`;
       console.log(person);
 
+  // const  person.filter(p => {
+  //     console.log(p)
+  //   })
+  //
     for(let i = 0; i < data.length; i++) {
         // console.log(data);
     }
@@ -28,17 +32,17 @@ localFileStream.pipe(csv())
 
 
   // var localFileStream = fs.createReadStream('');
-  var remoteFileStream = hdfs.createWriteStream('examples/src/main/resources/Sample_Data_2016.csv');
-
-  localFileStream.pipe(remoteFileStream);
-
-  remoteFileStream.on('error', function onError (err) {
-    // Do something with the error
-    // if(err) throw err;
-    console.log("Error: " + err);
-  });
-
-  remoteFileStream.on('finish', function onFinish () {
-    // Upload is done
-    console.log('Upload Finished');
-  });
+  // var remoteFileStream = hdfs.createWriteStream('examples/src/main/resources/Sample_Data_2016.csv');
+  //
+  // localFileStream.pipe(remoteFileStream);
+  //
+  // remoteFileStream.on('error', function onError (err) {
+  //   // Do something with the error
+  //   // if(err) throw err;
+  //   console.log("Error: " + err);
+  // });
+  //
+  // remoteFileStream.on('finish', function onFinish () {
+  //   // Upload is done
+  //   console.log('Upload Finished');
+  // });
