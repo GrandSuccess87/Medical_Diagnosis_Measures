@@ -6,15 +6,18 @@ const csv=require('csvtojson');
 csv()
 .fromFile(csvFilePath)
 .then((jsonObj)=>{
-  console.log(jsonObj);
-    var patientData = jsonObj;
+  // console.log(jsonObj);
+    // var patientData = jsonObj;
     patientData = JSON.stringify(jsonObj);
+    console.log(patientData);
     // console.log(patientData.encounter_id);
-    // console.log(patientData);
+
 
     // Get specific patient info for current index
-        // var Race = patientData;
-        // console.log(Race);
+        var race = patientData.race;
+        console.log(race);
+        // Get specific article info for current index
+    // var article = NYTData.response.docs[i];
 
 
 })
