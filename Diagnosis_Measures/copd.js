@@ -50,8 +50,16 @@ csv()
             queryCOPD += "SELECT " + "HistoryofMechanicalVentilation, SleepApnea, Respiratordependence/tracheostomystatus, Cardio-respiratoryfailureorcardio-respiratoryshock, Congestiveheartfailure, Acutecoronarysyndrome, Coronaryatherosclerosisoranginacerebrovasculardisease, Specifiedarrhythmias, OtherandUnspecifiedHeartDisease, Vascularorcirculatorydisease, Fibrosisoflungandotherchroniclungdisorders, Pneumonia, Historyofinfection, Metastaticcanceroracuteleukemia, LungUpperDigestiveTractandOtherSevereCancers, LymphaticHeadandNeckBrainandOtherMajorCancers;BreastColorectalandotherCancersandTumors;OtherRespiratoryandHeartNeoplasms, OtherDigestiveandUrinaryNeoplasms, Diabetesmellitus(DM)orDMcomplications, Protein-caloriemalnutrition, Disordersoffluidelectrolyteacid-base, OtherEndocrine/Metabolic/NutritionalDisorders, PancreaticDisease, PepticUlcerHemorrhageOtherSpecifiedGastrointestinalDisorders, OtherGastrointestinalDisorders, SevereHematologicalDisorders, Irondeficiencyorotheranemiasandblooddisease, Dementiaorotherspecifiedbraindisorders, Drug/AlcoholInducedDependence/Psychosis, MajorPsychiatricDisorders, Depression, AnxietyDisorders, OtherPsychiatricDisorders, QuadriplegiaParaplegiaParalysisFunctionalDisability, Polyneuropathy, HypertensiveHeartandRenalDiseaseorEncephalopathy WHERE ";
 
             console.log(queryCOPD);
+            console.log(value.diagnosis_code);
             console.log(value.HistoryofMechanicalVentilation);
-            return value.HistoryofMechanicalVentilation;
+
+
+            if (copdArray.indexOf(value.diagnosis_code) === -1) {
+              console.log("True Copd Match");
+            } else {
+              console.log("Not a valid Copd Match")
+            }
+            // return value.HistoryofMechanicalVentilation;
             // console.log(value.SleepApnea);
             // console.log(value.Respiratordependence_tracheostomystatus);
             // console.log(value.Cardio_respiratoryfailureorcardio_respiratoryshock);
