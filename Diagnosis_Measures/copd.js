@@ -2,16 +2,12 @@
 const fs = require("fs");
 const csvFilePath=('./data/SampleData2016_underscore.csv');
 const csv=require('csvtojson');
-const copd = process.argv[2];
-
-
 var count = 0;
-var queryAMI = '';
 var queryCOPD = '';
 
 const amiArray = [410.00, 410.01, 410.10, 410.11, 410.20, 410.21, 410.30, 410.31, 410.40, 410.41, 410.50, 410.51, 410.60, 410.61, 410.70, 410.71, 410.80, 410.81, 410.90,
   410.91];
-console.log("\r\n AMI Diagnosis Codes: " + amiArray);
+// console.log("\r\n AMI Diagnosis Codes: " + amiArray);
 
 const copdArray = [491.21, 491.22, 491.8, 491.9, 492.8, 493.20, 493.21, 493.22, 496, 518.81, 518.82, 518.84, 799.1];
 console.log("\r\n COPD Diagnosis Codes: " + copdArray);
@@ -28,15 +24,15 @@ console.log("\r\n COPD Diagnosis Codes: " + copdArray);
 
 const pnArray = [480.0, 480.1, 480.2, 480.3, 480.8, 480.9, 481, 482.0, 482.1, 482.2, 482.30, 482.31, 482.32, 482.39, 482.40, 482.41, 482.42, 482.49, 482.81, 482.82, 482.83,
 482.84, 482.89, 482.9, 483.0, 483.1, 483.8, 485, 486, 487.0, 488.11];
-console.log("\r\n pnArray Diagnosis Codes: " + pnArray);
+// console.log("\r\n pnArray Diagnosis Codes: " + pnArray);
 
 const tha_tkaArray = [81.51, 81.54];
-console.log("\r\n tha_tkaArray Diagnosis Codes: " + tha_tkaArray + "\r\n");
+// console.log("\r\n tha_tkaArray Diagnosis Codes: " + tha_tkaArray + "\r\n");
 
-
+if(process.argv[2] === "copd") {
 csv()
 .fromFile(csvFilePath)
-.then((jsonObj)=>{
+.then((jsonObj)=> {
 
     // console.log(jsonObj);
       var patientData = jsonObj;
@@ -47,18 +43,62 @@ csv()
             // print the slect statemtnts to the console
             console.log("\r\n==================================================\r\n");
 
-            queryCOPD += "SELECT " + "HistoryofMechanicalVentilation, SleepApnea, Respiratordependence/tracheostomystatus, Cardio-respiratoryfailureorcardio-respiratoryshock, Congestiveheartfailure, Acutecoronarysyndrome, Coronaryatherosclerosisoranginacerebrovasculardisease, Specifiedarrhythmias, OtherandUnspecifiedHeartDisease, Vascularorcirculatorydisease, Fibrosisoflungandotherchroniclungdisorders, Pneumonia, Historyofinfection, Metastaticcanceroracuteleukemia, LungUpperDigestiveTractandOtherSevereCancers, LymphaticHeadandNeckBrainandOtherMajorCancers;BreastColorectalandotherCancersandTumors;OtherRespiratoryandHeartNeoplasms, OtherDigestiveandUrinaryNeoplasms, Diabetesmellitus(DM)orDMcomplications, Protein-caloriemalnutrition, Disordersoffluidelectrolyteacid-base, OtherEndocrine/Metabolic/NutritionalDisorders, PancreaticDisease, PepticUlcerHemorrhageOtherSpecifiedGastrointestinalDisorders, OtherGastrointestinalDisorders, SevereHematologicalDisorders, Irondeficiencyorotheranemiasandblooddisease, Dementiaorotherspecifiedbraindisorders, Drug/AlcoholInducedDependence/Psychosis, MajorPsychiatricDisorders, Depression, AnxietyDisorders, OtherPsychiatricDisorders, QuadriplegiaParaplegiaParalysisFunctionalDisability, Polyneuropathy, HypertensiveHeartandRenalDiseaseorEncephalopathy WHERE ";
+            queryCOPD += "SELECT " + "HistoryofMechanicalVentilation, SleepApnea, Respiratordependence/tracheostomystatus, Cardio-respiratoryfailureorcardio-respiratoryshock, Congestiveheartfailure, Acutecoronarysyndrome, Coronaryatherosclerosisoranginacerebrovasculardisease, Specifiedarrhythmias, OtherandUnspecifiedHeartDisease, Vascularorcirculatorydisease, Fibrosisoflungandotherchroniclungdisorders, Pneumonia, Historyofinfection, Metastaticcanceroracuteleukemia, LungUpperDigestiveTractandOtherSevereCancers, LymphaticHeadandNeckBrainandOtherMajorCancers;BreastColorectalandotherCancersandTumors;OtherRespiratoryandHeartNeoplasms, OtherDigestiveandUrinaryNeoplasms, Diabetesmellitus(DM)orDMcomplications, Protein-caloriemalnutrition, Disordersoffluidelectrolyteacid-base, OtherEndocrine/Metabolic/NutritionalDisorders, PancreaticDisease, PepticUlcerHemorrhageOtherSpecifiedGastrointestinalDisorders, OtherGastrointestinalDisorders, SevereHematologicalDisorders, Irondeficiencyorotheranemiasandblooddisease, Dementiaorotherspecifiedbraindisorders, Drug/AlcoholInducedDependence/Psychosis, MajorPsychiatricDisorders, Depression, AnxietyDisorders, OtherPsychiatricDisorders, QuadriplegiaParaplegiaParalysisFunctionalDisability, Polyneuropathy, HypertensiveHeartandRenalDiseaseorEncephalopathy WHERE ?",
+
+            {
+              value.HistoryofMechanicalVentilation: "yes",
+              value.SleepApnea: "yes",
+              value.Respiratordependence_tracheostomystatus: "yes",
+              value.Cardio_respiratoryfailureorcardio_respiratoryshock: "yes",
+              value.Congestiveheartfailure: "yes",
+              value.Acutecoronarysyndrome: "yes",
+              value.Coronaryatherosclerosisoranginacerebrovasculardisease: "yes",
+              value.Specifiedarrhythmias: "yes",
+              value.OtherandUnspecifiedHeartDisease: "yes",
+              value.Vascularorcirculatorydisease: "yes",
+              value.Fibrosisoflungandotherchroniclungdisorders: "yes",
+              value.Pneumonia: "yes",
+              value.Historyofinfection: "yes",
+              value.Metastaticcanceroracuteleukemia: "yes",
+              value.LungUpperDigestiveTractandOtherSevereCancers: "yes",
+              value.LymphaticHeadandNeckBrainandOtherMajorCancers_BreastColorectalandotherCancersandTumors_OtherRespiratoryandHeartNeoplasms: "yes",
+              value.OtherDigestiveandUrinaryNeoplasms: "yes",
+              value.Diabetesmellitus_DM_orDMcomplications: "yes",
+              value.Protein_caloriemalnutrition: "yes",
+              value.Disordersoffluidelectrolyteacid_base: "yes",
+              value.OtherEndocrine_Metabolic_NutritionalDisorders: "yes",
+              value.PancreaticDisease: "yes",
+              value.PepticUlcerHemorrhageOtherSpecifiedGastrointestinalDisorders: "yes",
+              value.OtherGastrointestinalDisorders: "yes",
+              value.SevereHematologicalDisorders: "yes",
+              value.Irondeficiencyorotheranemiasandblooddisease: "yes",
+              value.Dementiaorotherspecifiedbraindisorders: "yes",
+              value.Drug_AlcoholInducedDependence_Psychosis: "yes",
+              value.MajorPsychiatricDisorders: "yes",
+              value.Depression: "yes",
+              value.AnxietyDisorders: "yes",
+              value.OtherPsychiatricDisorders: "yes",
+              value.QuadriplegiaParaplegiaParalysisFunctionalDisability: "yes",
+              value.Polyneuropathy: "yes",
+              value.HypertensiveHeartandRenalDiseaseorEncephalopathy: "yes"
+            },
+            function(err, res) {
+              console.log(res.affectedRows + " All COPD diagnoses with a value of yes!\n");
+
+            }
+
+            // ;
 
             console.log(queryCOPD);
-            console.log(value.diagnosis_code);
+            // console.log(value.diagnosis_code);
             console.log(value.HistoryofMechanicalVentilation);
-
-
-            if (copdArray.indexOf(value.diagnosis_code) === -1) {
-              console.log("True Copd Match");
-            } else {
-              console.log("Not a valid Copd Match")
-            }
+            //
+            //
+            // if (copdArray.indexOf(value.diagnosis_code) === -1) {
+            //   console.log("True Copd Match");
+            // } else {
+            //   console.log("Not a valid Copd Match")
+            // }
             // return value.HistoryofMechanicalVentilation;
             // console.log(value.SleepApnea);
             // console.log(value.Respiratordependence_tracheostomystatus);
@@ -85,6 +125,22 @@ csv()
           }
           count++;
       };
+//
+//       function deleteProduct() {
+//   console.log("Deleting all strawberry icecream...\n");
+//   connection.query(
+//     "DELETE FROM products WHERE ?",
+//     {
+//       flavor: "strawberry"
+//     },
+//     function(err, res) {
+//       console.log(res.affectedRows + " products deleted!\n");
+//       // Call readProducts AFTER the DELETE completes
+//       readProducts();
+//     }
+//   );
+// }
+//
 
       // fs.writeFile("copd.sql", queryCOPD, function(err) {
       //
@@ -96,3 +152,4 @@ csv()
       //
       // });
   });
+}
