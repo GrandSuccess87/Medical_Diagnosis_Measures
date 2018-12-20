@@ -31,10 +31,6 @@ const pnArray = [480.0, 480.1, 480.2, 480.3, 480.8, 480.9, 481, 482.0, 482.1, 48
 482.84, 482.89, 482.9, 483.0, 483.1, 483.8, 485, 486, 487.0, 488.11];
 console.log("\r\n pnArray Diagnosis Codes: " + pnArray);
 
-const tha_tkaArray = [81.51, 81.54];
-console.log("\r\n tha_tkaArray Diagnosis Codes: " + tha_tkaArray + "\r\n");
-
-
 csv()
 .fromFile(csvFilePath)
 .then((jsonObj)=>{
@@ -48,7 +44,7 @@ csv()
             console.log("\r\n==================================================\r\n");
 
             // print the slect statemtnts to the console
-            queryAMI += "SELECT " + "HistoryofPTCA, HistoryofCABG, Congestiveheartfailure, Acutecoronarysyndrome, Anteriormyocardialinfarction, Otherlocationofmyocardialinfarction, Anginapectorisoldmyocardialinfarction, Coronaryatherosclerosis, Valvularorrheumaticheartdisease, Specifiedarrhythmias, Historyofinfection, Metastaticcanceroracuteleukemia, Cancer, Diabetesmellitus(DM)orDMcomplications, Protein-caloriemalnutrition, Disordersoffluidelectrolyteacid-base, Irondeficiencyorotheranemiasandblooddisease, Dementiaorotherspecifiedbraindisorders,Hemiplegiaparaplegiaparalysisfunctionaldisability, Stroke, Cerebrovasculardisease, Vascularorcirculatorydisease, Chronicobstructivepulmonarydisease, Asthma, Pneumonia, End-stagerenaldiseaseordialysis, Renalfailure, Otherurinarytractdisorders, Decubitusulcerorchronicskinulcer WHERE"
+            queryAMI += "SELECT " + " patient_nbr, diagnosis_code FROM MedicalDataDF WHERE HistoryofPTCA='yes' OR HistoryofCABG='yes' OR Congestiveheartfailure='yes' OR Acutecoronarysyndrome='yes' OR Anteriormyocardialinfarction='yes' OR Otherlocationofmyocardialinfarction='yes' OR Anginapectorisoldmyocardialinfarction='yes' OR Coronaryatherosclerosis='yes' OR Valvularorrheumaticheartdisease='yes' OR Specifiedarrhythmias='yes' OR Historyofinfection='yes' OR Metastaticcanceroracuteleukemia='yes' OR Cancer='yes' OR Diabetesmellitus(DM)orDMcomplications='yes' OR Protein-caloriemalnutrition='yes' OR Disordersoffluidelectrolyteacid-base='yes' OR Irondeficiencyorotheranemiasandblooddisease='yes' OR Dementiaorotherspecifiedbraindisorders='yes' OR Hemiplegiaparaplegiaparalysisfunctionaldisability='yes' OR Stroke='yes' OR Cerebrovasculardisease='yes' OR Vascularorcirculatorydisease='yes' OR Chronicobstructivepulmonarydisease='yes' OR Asthma='yes' OR Pneumonia='yes' OR End-stagerenaldiseaseordialysis='yes' OR Renalfailure='yes' OR Otherurinarytractdisorders='yes' OR Decubitusulcerorchronicskinulcer='yes'";
             // amiArray.indexOf(value.diagnosis_code);
             console.log(queryAMI);
 
