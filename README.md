@@ -19,9 +19,9 @@ Please visit the links below for a walk through on installation instructions.
 [Hadoop](https://www.digitalocean.com/community/tutorials/how-to-install-hadoop-in-stand-alone-mode-on-ubuntu-18-04
 )
 
-[Spark] (https://spark.apache.org/downloads.html)
+[Spark](https://spark.apache.org/downloads.html)
 
-[Vagrant] (https://box.scotch.io/docs/)
+[Vagrant](https://box.scotch.io/docs/)
 
 #**Challenges**
 
