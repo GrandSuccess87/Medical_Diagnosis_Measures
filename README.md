@@ -16,7 +16,7 @@ You will need to install Hadoop 3.1.1 and Spark 2.4.0 and Vagrant.
 
 Please visit the links below for a walk through on installation instructions.
 
-[Hadoop(https://www.digitalocean.com/community/tutorials/how-to-install-hadoop-in-stand-alone-mode-on-ubuntu-18-04
+[Hadoop](https://www.digitalocean.com/community/tutorials/how-to-install-hadoop-in-stand-alone-mode-on-ubuntu-18-04
 )
 
 - With these installation instructions I was successfully able to set up Hadoop in standalone mode and used the sample map reduce test to verify I set up Hadoop correctly.
