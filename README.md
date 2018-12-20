@@ -45,7 +45,7 @@ Please visit the links below for a walk through on installation instructions.
 ![picture](images/Table3.png)
 
 **Diagnoses Count**
-![picture](images/count_diagnoses.png)
+![picture](images/Count_diagnoses.png)
 
 **HISTORY OF PTCA TABLE**
 ![picture](images/HofPTCA_TABLE.png)
