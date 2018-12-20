@@ -54,7 +54,7 @@ Please visit the links below for a walk through on installation instructions.
 ![picture](images/PTCA_Table_diagnosis_Match.png)
 
 
-#**In building the application I believe I was relatively close to retreiving the desired outcome.  Although the desired outcome was not achieved I feel great that I have learned so much throughout this process!** 
+###**In building the application I believe I was relatively close to retreiving the desired outcome.  Although the desired outcome was not achieved I feel great that I have learned so much throughout this process!** 
 
 
 
