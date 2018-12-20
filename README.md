@@ -31,3 +31,31 @@ Please visit the links below for a walk through on installation instructions.
 - Installing Spark on Vagrant
 - Connecting Spark to Node: Setting up an environment where Spark can read my SQL statements from the sql files.  I tried installing an Odbc Spark driver, but I was denied permission.  I also tried NPM package eclairJs which requires Docker and ran into some set backs with Docker software and pulling the Docker image to configure the Dockerfile.
 - Ultimately I had to use the Scala API to import the csv file and build the database.  I have attached some screenshots below of what I was able to successfully build and have more inside of my images folder.
+
+**Lace Table**
+![picture](images/LaceTable.png)
+
+**Sample Table 1**
+![picture](images/Table1.png)
+
+**Sample Table 2**
+![picture](images/Table2.png)
+
+**Sample Table 3**
+![picture](images/Table3.png)
+
+**Diagnoses Count**
+![picture](images/count_diagnoses.png)
+
+**HISTORY OF PTCA TABLE**
+![picture](images/HofPTCA_TABLE.png)
+
+**HISTORY OF PTCA FILTERED BY "YES", The objective here was to display the diagnosis code alongside those with a value of yes**
+![picture](images/PTCA_Table_diagnosis_Match.png)
+
+
+**In building the application I believe I was relatively close to retreiving the desired outcome.  Although the desired outcome was not achieved I feel great that I have learned so much throughout this process!** 
+
+
+
+
