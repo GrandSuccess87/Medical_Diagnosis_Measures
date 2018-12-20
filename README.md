@@ -1,4 +1,4 @@
-# Medical Measures App
+# Server Side Medical Diagnosis Measures Application
 
 ##**Description**
 
