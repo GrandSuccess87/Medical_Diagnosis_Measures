@@ -34,113 +34,38 @@ csv()
 .fromFile(csvFilePath)
 .then((jsonObj)=> {
 
-    // console.log(jsonObj);
       var patientData = jsonObj;
-      // console.log(patientData);
 
       for (var value of patientData) {
           if(count > 0) {
+
             // print the slect statemtnts to the console
             console.log("\r\n==================================================\r\n");
+            queryCOPD += "SELECT patient_nbr, diagnosis_code FROM MedicalDataDF WHERE HistoryofMechanicalVentilation = 'yes' OR SleepApnea = 'yes' OR Respiratordependence/tracheostomystatus = 'yes' OR Cardio-respiratoryfailureorcardio-respiratoryshock = 'yes' OR Congestiveheartfailure = 'yes' OR Acutecoronarysyndrome = 'yes' OR Coronaryatherosclerosisoranginacerebrovasculardisease = 'yes' OR Specifiedarrhythmias = 'yes' OR OtherandUnspecifiedHeartDisease = 'yes' OR Vascularorcirculatorydisease = 'yes' OR Fibrosisoflungandotherchroniclungdisorders = 'yes' OR Pneumonia = 'yes' OR Historyofinfection = 'yes' OR Metastaticcanceroracuteleukemia = 'yes' OR LungUpperDigestiveTractandOtherSevereCancers = 'yes' OR LymphaticHeadandNeckBrainandOtherMajorCancers;BreastColorectalandotherCancersandTumors;OtherRespiratoryandHeartNeoplasms = 'yes' OR OtherDigestiveandUrinaryNeoplasms = 'yes' OR Diabetesmellitus(DM)orDMcomplications = 'yes' OR Protein-caloriemalnutrition = 'yes' OR Disordersoffluidelectrolyteacid-base = 'yes' OR OtherEndocrine/Metabolic/NutritionalDisorders = 'yes' OR PancreaticDisease = 'yes' OR PepticUlcerHemorrhageOtherSpecifiedGastrointestinalDisorders = 'yes' OR OtherGastrointestinalDisorders = 'yes' OR SevereHematologicalDisorders = 'yes' OR Irondeficiencyorotheranemiasandblooddisease = 'yes' OR Dementiaorotherspecifiedbraindisorders = 'yes' OR Drug/AlcoholInducedDependence/Psychosis = 'yes' OR MajorPsychiatricDisorders = 'yes' OR Depression = 'yes' OR AnxietyDisorders = 'yes' OR OtherPsychiatricDisorders = 'yes' OR QuadriplegiaParaplegiaParalysisFunctionalDisability = 'yes' OR Polyneuropathy = 'yes' OR HypertensiveHeartandRenalDiseaseorEncephalopathy ='yes'";
+            console.log(queryCOPD);
+            // return;
 
-            queryCOPD += "SELECT " + "HistoryofMechanicalVentilation, SleepApnea, Respiratordependence/tracheostomystatus, Cardio-respiratoryfailureorcardio-respiratoryshock, Congestiveheartfailure, Acutecoronarysyndrome, Coronaryatherosclerosisoranginacerebrovasculardisease, Specifiedarrhythmias, OtherandUnspecifiedHeartDisease, Vascularorcirculatorydisease, Fibrosisoflungandotherchroniclungdisorders, Pneumonia, Historyofinfection, Metastaticcanceroracuteleukemia, LungUpperDigestiveTractandOtherSevereCancers, LymphaticHeadandNeckBrainandOtherMajorCancers;BreastColorectalandotherCancersandTumors;OtherRespiratoryandHeartNeoplasms, OtherDigestiveandUrinaryNeoplasms, Diabetesmellitus(DM)orDMcomplications, Protein-caloriemalnutrition, Disordersoffluidelectrolyteacid-base, OtherEndocrine/Metabolic/NutritionalDisorders, PancreaticDisease, PepticUlcerHemorrhageOtherSpecifiedGastrointestinalDisorders, OtherGastrointestinalDisorders, SevereHematologicalDisorders, Irondeficiencyorotheranemiasandblooddisease, Dementiaorotherspecifiedbraindisorders, Drug/AlcoholInducedDependence/Psychosis, MajorPsychiatricDisorders, Depression, AnxietyDisorders, OtherPsychiatricDisorders, QuadriplegiaParaplegiaParalysisFunctionalDisability, Polyneuropathy, HypertensiveHeartandRenalDiseaseorEncephalopathy WHERE ?",
-
-            {
-              value.HistoryofMechanicalVentilation: "yes",
-              value.SleepApnea: "yes",
-              value.Respiratordependence_tracheostomystatus: "yes",
-              value.Cardio_respiratoryfailureorcardio_respiratoryshock: "yes",
-              value.Congestiveheartfailure: "yes",
-              value.Acutecoronarysyndrome: "yes",
-              value.Coronaryatherosclerosisoranginacerebrovasculardisease: "yes",
-              value.Specifiedarrhythmias: "yes",
-              value.OtherandUnspecifiedHeartDisease: "yes",
-              value.Vascularorcirculatorydisease: "yes",
-              value.Fibrosisoflungandotherchroniclungdisorders: "yes",
-              value.Pneumonia: "yes",
-              value.Historyofinfection: "yes",
-              value.Metastaticcanceroracuteleukemia: "yes",
-              value.LungUpperDigestiveTractandOtherSevereCancers: "yes",
-              value.LymphaticHeadandNeckBrainandOtherMajorCancers_BreastColorectalandotherCancersandTumors_OtherRespiratoryandHeartNeoplasms: "yes",
-              value.OtherDigestiveandUrinaryNeoplasms: "yes",
-              value.Diabetesmellitus_DM_orDMcomplications: "yes",
-              value.Protein_caloriemalnutrition: "yes",
-              value.Disordersoffluidelectrolyteacid_base: "yes",
-              value.OtherEndocrine_Metabolic_NutritionalDisorders: "yes",
-              value.PancreaticDisease: "yes",
-              value.PepticUlcerHemorrhageOtherSpecifiedGastrointestinalDisorders: "yes",
-              value.OtherGastrointestinalDisorders: "yes",
-              value.SevereHematologicalDisorders: "yes",
-              value.Irondeficiencyorotheranemiasandblooddisease: "yes",
-              value.Dementiaorotherspecifiedbraindisorders: "yes",
-              value.Drug_AlcoholInducedDependence_Psychosis: "yes",
-              value.MajorPsychiatricDisorders: "yes",
-              value.Depression: "yes",
-              value.AnxietyDisorders: "yes",
-              value.OtherPsychiatricDisorders: "yes",
-              value.QuadriplegiaParaplegiaParalysisFunctionalDisability: "yes",
-              value.Polyneuropathy: "yes",
-              value.HypertensiveHeartandRenalDiseaseorEncephalopathy: "yes"
-            },
-            function(err, res) {
+            // if the query is true print the affected rows, then I need to loop through each row to find the diagnosis code
+            if(queryCOPD) {
+            let checkRow = (err, res) => {
+              console.log(res);
               console.log(res.affectedRows + " All COPD diagnoses with a value of yes!\n");
+              // Log all results of the SELECT statement
+              res.forEach(row => {
+              console.log(`Returned Copd Diagnosis Code: ${row.diagnosis_code}`);
 
+              // store row.diagnosis_code inside of a variable and loop throught the copd array
+              // use the index of method to check the returned code against the array
+              })
             }
 
             // ;
-
-            console.log(queryCOPD);
-            // console.log(value.diagnosis_code);
-            console.log(value.HistoryofMechanicalVentilation);
-            //
-            //
-            // if (copdArray.indexOf(value.diagnosis_code) === -1) {
-            //   console.log("True Copd Match");
-            // } else {
-            //   console.log("Not a valid Copd Match")
-            // }
-            // return value.HistoryofMechanicalVentilation;
-            // console.log(value.SleepApnea);
-            // console.log(value.Respiratordependence_tracheostomystatus);
-            // console.log(value.Cardio_respiratoryfailureorcardio_respiratoryshock);
-            // console.log(value.Congestiveheartfailure);
-            // console.log(value.Acutecoronarysyndrome);
-            // console.log(value.Coronaryatherosclerosisoranginacerebrovasculardisease);
-            // console.log(value.Specifiedarrhythmias);
-            // console.log(value.OtherandUnspecifiedHeartDisease);
-            // console.log(value.Vascularorcirculatorydisease);
-            // console.log(value.Fibrosisoflungandotherchroniclungdisorders);
-            // console.log(value.Pneumonia);
-            // console.log(value.Historyofinfection);
-            // console.log(value.Metastaticcanceroracuteleukemia);
-            // console.log(value.LungUpperDigestiveTractandOtherSevereCancers);
-            // console.log(value.LymphaticHeadandNeckBrainandOtherMajorCancers_BreastColorectalandotherCancersandTumors_OtherRespiratoryandHeartNeoplasms);
-            // console.log(value.OtherDigestiveandUrinaryNeoplasms);
-            // console.log(value.Diabetesmellitus_DM_orDMcomplications);
-            // console.log(value.Protein_caloriemalnutrition);
-            // console.log(value.Disordersoffluidelectrolyteacid_base);
-
-            break;
-
+          } else {
+            console.log("This is not a valid copd diagnosis");
+          }
           }
           count++;
       };
-//
-//       function deleteProduct() {
-//   console.log("Deleting all strawberry icecream...\n");
-//   connection.query(
-//     "DELETE FROM products WHERE ?",
-//     {
-//       flavor: "strawberry"
-//     },
-//     function(err, res) {
-//       console.log(res.affectedRows + " products deleted!\n");
-//       // Call readProducts AFTER the DELETE completes
-//       readProducts();
-//     }
-//   );
-// }
-//
 
       // fs.writeFile("copd.sql", queryCOPD, function(err) {
       //
@@ -153,3 +78,7 @@ csv()
       // });
   });
 }
+
+// SELECT agent_code, ord_amount, cust_code, ord_num
+// FROM orders 
+// WHERE agent_code='A002';
