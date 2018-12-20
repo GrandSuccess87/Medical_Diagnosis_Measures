@@ -7,7 +7,7 @@ For example, the objective is to run a particular medical measure in the applica
 
 #**Getting started**
 
-These instructions will give you a copy of the project open running on your local machine for development purposes.  To run the application you need to type `node` followed by `the program name` followed by `medical measure name`.
+These instructions will give you a copy of the project open running on your local machine for development purposes.  To run the application, in the command line type `node` followed by `the program name` followed by `medical measure name`.
 For example, in the command line you will need to type `node/Diagnosis_Measures/copd copd`
 
 ###**Prerequisites**
@@ -16,13 +16,17 @@ You will need to install Hadoop 3.1.1 and Spark 2.4.0 and Vagrant.
 
 Please visit the links below for a walk through on installation instructions.
 
-[Hadoop](https://www.digitalocean.com/community/tutorials/how-to-install-hadoop-in-stand-alone-mode-on-ubuntu-18-04
+[Hadoop (https://www.digitalocean.com/community/tutorials/how-to-install-hadoop-in-stand-alone-mode-on-ubuntu-18-04
 )
+
+-With these installation instructions I was successfully able to set up Hadoop in standalone mode and used the sample map reduce test to verify I set up Hadoop correctly.
 
 [Spark](https://spark.apache.org/downloads.html)
 
 [Vagrant](https://box.scotch.io/docs/)
 
 #**Challenges**
+
+
 
 
