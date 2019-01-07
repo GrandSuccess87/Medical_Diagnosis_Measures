@@ -1,11 +1,11 @@
 # Server Side Medical Diagnosis Measures Application
 
-##**Description**
+**Description**
 
 The goal of this application is to use Big data tools such as Hadoop or Spark to render patients medical data and filter records based on diagnoses, diagnosis codes, comorbidity, length of stay, acute admissions, and Emergency visits.
 For example, the objective is to run a particular medical measure in the application that will return SQL statements. These SQL queries will contain information suh as the comorbidity diagnoses and diagnosis codes that correspond with that measure and will then run against the database.  
 
-##**Getting started**
+**Getting started**
 
 These instructions will give you a copy of the project open running on your local machine for development purposes.  To run the application, in the command line type `node` followed by `the program name` followed by `medical measure name`.
 For example, in the command line you will need to type `node/Diagnosis_Measures/copd copd`
@@ -26,7 +26,7 @@ Please visit the links below for a walk through on installation instructions.
 [Vagrant](https://app.vagrantup.com/bento/boxes/ubuntu-18.04)
 - I used the latest version of Ubuntu as my vagrant box
 
-##**Challenges**
+**Challenges**
 - Setting up Hadoop in stand alone mode
 - Installing Spark on Vagrant
 - Connecting Spark to Node: Setting up an environment where Spark can read my SQL statements from the sql files.  I tried installing an Odbc Spark driver, but I was denied permission.  I also tried to create a temporary view medical measures table, along with NPM package eclairJs which requires Docker and ran into some set backs with Docker software and pulling the Docker image to configure the Dockerfile.
@@ -54,7 +54,7 @@ Please visit the links below for a walk through on installation instructions.
 ![picture](images/PTCA_Table_diagnosis_Match.png)
 
 
-###**In building the application I believe I was relatively close to retreiving the desired outcome.  Although the desired outcome was not achieved I feel great that I have learned so much throughout this process!** 
+**In building the application I believe I was relatively close to retreiving the desired outcome.  Although the desired outcome was not achieved I feel great that I have learned so much throughout this process!** 
 
 
 
