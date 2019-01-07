@@ -10,7 +10,7 @@ For example, the objective is to run a particular medical measure in the applica
 These instructions will give you a copy of the project open running on your local machine for development purposes.  To run the application, in the command line type `node` followed by `the program name` followed by `medical measure name`.
 For example, in the command line you will need to type `node/Diagnosis_Measures/copd copd`
 
-###**Prerequisites**
+**Prerequisites**
 
 You will need to install Hadoop 3.1.1 and Spark 2.4.0 and Vagrant.
 
@@ -31,6 +31,8 @@ Please visit the links below for a walk through on installation instructions.
 - Installing Spark on Vagrant
 - Connecting Spark to Node: Setting up an environment where Spark can read my SQL statements from the sql files.  I tried installing an Odbc Spark driver, but I was denied permission.  I also tried to create a temporary view medical measures table, along with NPM package eclairJs which requires Docker and ran into some set backs with Docker software and pulling the Docker image to configure the Dockerfile.
 - Ultimately I had to use the Scala API to import the csv file and build the database.  I have attached some screenshots below of what I was able to successfully build and have more inside of my images folder.
+
+<hr>
 
 **Lace Table**
 ![picture](images/LaceTable.png)
