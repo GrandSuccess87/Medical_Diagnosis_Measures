@@ -1,7 +1,7 @@
 {
   "name": "MedicalMeasuresApp",
   "version": "1.0.0",
-  "description": "",
+  "description": "The goal of this application is to use Big data tools such as Hadoop or Spark to render patients medical data and filter records based on diagnoses, diagnosis codes, comorbidity, length of stay, acute admissions, and Emergency visits.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -10,7 +10,7 @@
     "type": "git",
     "url": "git+https://github.com/GrandSuccess87/MedicalMeasuresApp.git"
   },
-  "keywords": [],
+  "keywords": ["Medical", "Diagnosis", "NodeJs", "ServerSideApp", "BigData", "Hadoop", "Spark", "Javascript"],
   "author": "Quintessa Anderson",
   "license": "ISC",
   "bugs": {
@@ -25,7 +25,7 @@
     "file-system": "^2.2.2",
     "node-webhdfs": "^0.4.0",
     "webhdfs": "^1.2.0",
-    "cryptiles": "^=4.1.2",
-    "hoek": "^=4.2.1"
+    "cryptiles": "^4.1.2",
+    "hoek": "^4.2.1"
   }
 }

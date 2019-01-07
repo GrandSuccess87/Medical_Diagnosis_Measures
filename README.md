@@ -55,5 +55,6 @@ Please visit the links below for a walk through on installation instructions.
 **HISTORY OF PTCA FILTERED BY "YES", The objective here was to display the diagnosis code alongside those with a value of yes**
 ![picture](images/PTCA_Table_diagnosis_Match.png)
 
+<hr>
 
 **In building the application I believe I was relatively close to retreiving the desired outcome.  Although the desired outcome was not achieved I feel great that I have learned so much throughout this process!** 
