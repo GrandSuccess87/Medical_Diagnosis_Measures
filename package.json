@@ -11,7 +11,7 @@
     "url": "git+https://github.com/GrandSuccess87/MedicalMeasuresApp.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "Quintessa Anderson",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/GrandSuccess87/MedicalMeasuresApp/issues"
@@ -24,6 +24,8 @@
     "fast-csv": "^2.4.1",
     "file-system": "^2.2.2",
     "node-webhdfs": "^0.4.0",
-    "webhdfs": "^1.2.0"
+    "webhdfs": "^1.2.0",
+    "cryptiles": ">=4.1.2",
+    "hoek": ">=4.2.1"
   }
 }
